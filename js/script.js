@@ -7,7 +7,16 @@ const handleSubmit = (e) => {
   const url = document.getElementById('url').value;
   const size = document.getElementById('size').value;
 
-  console.log(url, size);
+  showSpinner();
+  setTimeout(() => hideSpinner(), 1000);
+};
+
+const showSpinner = () => {
+  document.getElementById('spinner').style.display = 'block';
+};
+
+const hideSpinner = () => {
+  document.getElementById('spinner').style.display = 'none';
 };
 
 form.addEventListener('submit', handleSubmit);
